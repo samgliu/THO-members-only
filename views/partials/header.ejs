@@ -1,0 +1,19 @@
+<h1><a href="/"><%= title %></a></h1>
+<div>
+    <% if (user) {%>
+        <ul>
+            <li><a href="/upgrade-member">Upgrade to Member</a></li>
+            <li><a href="/upgrade-admin">Upgrade to Admin</a>
+            <li><h1>WELCOME BACK <%=user.Firstname%> <%=user.Lastname%></h1></li>
+            <li><a href="/log-out">LOG OUT</a></li>
+        </ul>
+      <% } else { %>
+        <ul>
+        
+            <li><a href="/sign-in">Sign In</a></li>
+            <li><a href="/sign-up">Sign Up</a></li>
+        </ul>
+      <%}%>
+    
+</div>
+

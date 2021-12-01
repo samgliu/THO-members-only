@@ -1,0 +1,16 @@
+<form action="" method="POST">
+    <label for="topic">Topic</label>
+    <input name="topic" placeholder="topic" type="text" required/>
+    <label for="message">Message</label>
+    <textarea name="message" placeholder="message" type="text" required ></textarea>
+
+    
+    <% if (errors != undefined) { %>
+      <% errors.errors.forEach((err)=>{ %>
+          <p><%= err.msg %></p>
+        <% }) %>
+    <% } else { %>
+      <p></p>
+    <% } %>
+    <button>Post</button>
+  </form>

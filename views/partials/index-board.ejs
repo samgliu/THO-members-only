@@ -1,0 +1,45 @@
+<% if (user &&  user.isMember) {%>
+    <a href="create-message">Create new message</a>
+    <div>
+        <% if (messages != undefined) { %>
+            <% messages.forEach((msg)=>{ %>
+                <div>
+                    <img src="/images/avatar<%=msg.Avatar%>.png" alt="" />
+                    <div>
+                        <% if (user.isAdmin) {%>
+                            <a type="get" href="<%=msg._id%>/delete">Delete</a>
+                        <% } %>
+                        <p><%=msg.Topic%></p>
+                        <p><%=msg.Message%></p>
+                        <div>
+                            <p><%=msg.Timestamp%></p>
+                            <p><%=msg.User.Firstname%> <%=msg.User.Lastname%></p>
+                        </div> 
+                    </div>
+                    
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p></p>
+        <% } %>
+    </div>
+<% } else { %>
+    <div>
+        <% if (messages != undefined) { %>
+            <% messages.forEach((msg)=>{ %>
+                <div>
+                    <img src="/images/avatar<%=msg.Avatar%>.png" alt="" />
+                    <p><%=msg.Topic%></p>
+                    <p><%=msg.Message%></p>
+                    <div>
+                        <p><%=msg.Timestamp%></p>
+                        <p>Anonymous</p>
+                    </div> 
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p></p>
+        <% } %>
+    </div>
+<%}%>
+    

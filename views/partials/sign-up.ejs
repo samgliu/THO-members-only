@@ -1,0 +1,40 @@
+<form action="" method="POST">
+    <label for="firstname">Firstname</label>
+    <input name="firstname" placeholder="firstname" type="text" required/>
+    <label for="lastname">Lastname</label>
+    <input name="lastname" placeholder="lastname" type="text" required/>
+    <label for="email">Email</label>
+    <input name="email" placeholder="email" type="email" required/>
+
+    <label for="password">Password</label>
+    <input name="password" type="password" required/>
+    <label for="confirm">Confirm Password</label>
+    <input name="confirm" type="password" required/>
+    
+    <% if (errors != undefined) { %>
+      <% errors.errors.forEach((err)=>{ %>
+          <p><%= err.msg %></p>
+        <% }) %>
+    <% } else { %>
+      <p></p>
+    <% } %>
+
+    <label for="avatar">Avatar</label>
+    <div>
+        <input type="radio" id="avatar1" name="avatar" value="1"
+               checked>
+        <img for="avatar1" src="/images/avatar1.png" alt="" />
+      </div>
+      
+      <div>
+        <input type="radio" id="avatar2" name="avatar" value="2">
+        <img for="avatar2" src="/images/avatar2.png" alt="" />
+      </div>
+      
+      <div>
+        <input type="radio" id="avatar3" name="avatar" value="3">
+        <img for="avatar3" src="/images/avatar3.png" alt="" />
+      </div>
+    </div>
+    <button>Sign Up</button>
+  </form>
