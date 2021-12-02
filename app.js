@@ -32,12 +32,13 @@ app.use(compression()); // Compress all routes
 app.use(helmet());
 
 var httpPort = 3000;
-var httpsPort = 3001;
+
 /* http */
 app.listen(httpPort, () => {
     console.log(`App listening at http://localhost:${httpPort}`);
 });
-/* https */
+/* https 
+var httpsPort = 3001;
 var fs = require('fs');
 var https = require('https');
 https
@@ -53,6 +54,7 @@ https
             `App listening on port ${httpsPort}! Go to http://localhost:${httpsPort}`
         );
     });
+*/
 
 // set up mongoose connection
 var mongoose = require('mongoose');
