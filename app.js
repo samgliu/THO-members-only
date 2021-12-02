@@ -33,10 +33,10 @@ app.use(helmet());
 
 var httpPort = 3000;
 
-/* http */
+/* http 
 app.listen(httpPort, () => {
     console.log(`App listening at http://localhost:${httpPort}`);
-});
+});*/
 /* https 
 var httpsPort = 3001;
 var fs = require('fs');
