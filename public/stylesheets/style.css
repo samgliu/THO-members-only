@@ -64,6 +64,7 @@ header a {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .messages-container {
+    margin-top: 1.5em;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
@@ -87,6 +88,8 @@ header a {
 }
 .img-container img {
     width: 100%;
+    max-width: 120px;
+    max-height: 120px;
     height: auto;
 }
 .message-container {
