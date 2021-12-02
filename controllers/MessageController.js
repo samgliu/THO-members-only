@@ -44,7 +44,6 @@ exports.create_message_post = [
                 Message: req.body.message,
                 Timestamp: new Date(),
                 User: req.user,
-                Avatar: req.user.Avatar,
             }).save((err, rest) => {
                 if (err) {
                     return next(err);

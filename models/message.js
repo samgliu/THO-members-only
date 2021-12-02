@@ -13,7 +13,7 @@ var MessageSchema = new Schema({
         type: String,
         required: true,
         minLength: 1,
-        maxLength: 100,
+        maxLength: 200,
     },
     Timestamp: {
         type: Date,
@@ -23,12 +23,6 @@ var MessageSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true,
-    },
-    Avatar: {
-        type: Number,
-        required: true,
-        minLength: 1,
-        maxLength: 1,
     },
 });
 

@@ -1,19 +1,21 @@
 <% if (user &&  user.isMember) {%>
     <a href="create-message">Create new message</a>
-    <div>
+    <div class="messages-container">
         <% if (messages != undefined) { %>
             <% messages.forEach((msg)=>{ %>
                 <div>
-                    <img src="/images/avatar<%=msg.Avatar%>.png" alt="" />
-                    <div>
+                    <div class="img-container">
+                        <img src="/images/avatar<%=msg.User.Avatar%>.png" alt="" />
+                    </div>
+                    <div class="message-container">
                         <% if (user.isAdmin) {%>
-                            <a type="get" href="<%=msg._id%>/delete">Delete</a>
+                            <a type="get" href="<%=msg._id%>/delete">✖</a>
                         <% } %>
                         <p><%=msg.Topic%></p>
                         <p><%=msg.Message%></p>
-                        <div>
-                            <p><%=msg.Timestamp%></p>
+                        <div class="author">
                             <p><%=msg.User.Firstname%> <%=msg.User.Lastname%></p>
+                            <p><%=msg.Timestamp.toLocaleString()%></p>
                         </div> 
                     </div>
                     
@@ -24,17 +26,21 @@
         <% } %>
     </div>
 <% } else { %>
-    <div>
+    <div class="messages-container">
         <% if (messages != undefined) { %>
             <% messages.forEach((msg)=>{ %>
                 <div>
-                    <img src="/images/avatar<%=msg.Avatar%>.png" alt="" />
-                    <p><%=msg.Topic%></p>
-                    <p><%=msg.Message%></p>
-                    <div>
-                        <p><%=msg.Timestamp%></p>
-                        <p>Anonymous</p>
-                    </div> 
+                    <div class="img-container">
+                        <img src="/images/avatar<%=msg.User.Avatar%>.png" alt="" />
+                    </div>
+                    <div class="message-container">
+                        <p><%=msg.Topic%></p>
+                        <p><%=msg.Message%></p>
+                        <div class="author">
+                            <p>Anonymous</p>
+                            <p><%=msg.Timestamp%></p>
+                        </div> 
+                    </div>
                 </div>
             <% }) %>
         <% } else { %>
