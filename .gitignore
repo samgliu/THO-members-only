@@ -31,3 +31,6 @@ benchmarks/graphs
 *.env
 
 *Zone.Identifier
+
+*.cert
+*.key

@@ -31,6 +31,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression()); // Compress all routes
 app.use(helmet());
 
+var httpPort = 3000;
+var httpsPort = 3001;
+/* http */
+app.listen(httpPort, () => {
+    console.log(`App listening at http://localhost:${httpPort}`);
+});
+/* https */
+var fs = require('fs');
+var https = require('https');
+https
+    .createServer(
+        {
+            key: fs.readFileSync('server.key'),
+            cert: fs.readFileSync('server.cert'),
+        },
+        app
+    )
+    .listen(httpsPort, function () {
+        console.log(
+            `App listening on port ${httpsPort}! Go to http://localhost:${httpsPort}`
+        );
+    });
+
 // set up mongoose connection
 var mongoose = require('mongoose');
 var dev_db_url = ''; // personal mongodb url
