@@ -2,13 +2,15 @@
 
 # Description
 
-An Member Only System build for TOP project.
+An Member Only System build for TOP project.  
+Member Password: VIP  
+Admin Password: ADMIN
 
 # Built With
 
 -   Node.js
 -   Express
--   passport
+-   passportJS
 -   ejs
 
 # Feature:
