@@ -161,7 +161,7 @@ exports.upgrade_admin_post = [
         const errors = validationResult(req);
         if (req.user.isAdmin) {
             errors.errors.push({
-                msg: 'User is already a member!',
+                msg: 'User is already a Admin!',
             });
         }
         if (!errors.isEmpty()) {

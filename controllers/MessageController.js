@@ -56,7 +56,7 @@ exports.create_message_post = [
 
 /* message delete */
 exports.delete_message_get = (req, res, next) => {
-    if (!req.user == undefined && req.user.isAdmin) {
+    if (req.user != undefined && req.user.isAdmin) {
         Message.deleteOne({ _id: req.params.id })
             .then(function () {
                 res.redirect('/'); // Success
